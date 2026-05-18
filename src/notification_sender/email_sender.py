@@ -31,8 +31,9 @@ SMTP_CONFIGS = {
     # 网易邮箱
     "163.com": {"server": "smtp.163.com", "port": 465, "ssl": True},
     "126.com": {"server": "smtp.126.com", "port": 465, "ssl": True},
-    # Gmail
+    # Gmail (googlemail.com is the legacy/alternate Gmail domain, same SMTP)
     "gmail.com": {"server": "smtp.gmail.com", "port": 587, "ssl": False},
+    "googlemail.com": {"server": "smtp.gmail.com", "port": 587, "ssl": False},
     # Outlook
     "outlook.com": {"server": "smtp-mail.outlook.com", "port": 587, "ssl": False},
     "hotmail.com": {"server": "smtp-mail.outlook.com", "port": 587, "ssl": False},

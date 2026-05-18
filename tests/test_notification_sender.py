@@ -20,6 +20,7 @@ from typing import Optional
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from src.config import Config
+from src.notification_sender.email_sender import SMTP_CONFIGS
 from src.notification_sender import (
     AstrbotSender,
     CustomWebhookSender,
@@ -232,6 +233,9 @@ class TestFeishuSender(unittest.TestCase):
 
 class TestEmailSender(unittest.TestCase):
     """Unit tests for EmailSender (config and receiver logic; send path covered via service)."""
+
+    def test_googlemail_com_uses_same_smtp_as_gmail(self):
+        self.assertEqual(SMTP_CONFIGS["googlemail.com"], SMTP_CONFIGS["gmail.com"])
 
     def test_send_returns_false_when_not_configured(self):
         cfg = _config()
